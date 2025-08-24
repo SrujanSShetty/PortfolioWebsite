@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #181d24;
+  color: #f7fafc;
+  min-height: 100vh;
+}
+.logo { font-weight: bold; font-size: 1.7em; color: #fff; letter-spacing: 1px; }
+header.header-react { background: #181d24; padding: 24px 0; }
+nav { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: flex-start; gap: 48px; padding-left: 40px; }
+.home-section-react {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  padding: 92px 7vw 64px 7vw;
+  background: #232730;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 0;
+}
+.home-content-react { flex: 1 1 380px; min-width: 275px; max-width:420px;}
+.home-content-react h2 { font-size: 1.3em; color: #bbb; margin: 0 0 4px; }
+.home-content-react h1 { font-size: 2.6em; color: #fff; margin: 0; }
+.home-content-react h3 { font-size: 1.3em; font-weight: 400; margin: 10px 0 30px 0; }
+.highlight { color: #4FC3F7; }
+.home-content-react p { max-width: 400px; color: #adbcd9; margin-bottom: 22px; }
+.socials { margin-bottom: 22px; }
+.socials a { margin-right: 18px; display: inline-block; }
+.socials img { width: 28px; height: 28px; filter: invert(75%); transition: filter .2s;}
+.socials a:hover img { filter: invert(63%) sepia(1) saturate(4) hue-rotate(170deg); }
+.button-row {
+  display: flex;
+  gap: 16px;
+  margin: 28px 0 0 0;
+  flex-wrap: wrap;
+}
+.btn, .btn-glow {
+  background: #4FC3F7;
+  color: #232730;
+  padding: 10px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: none;
+  margin-top: 10px;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002;
+  transition: background .2s, color .2s;
+}
+.btn-glow:active, .btn-glow:focus, .btn-glow:hover {
+  background: #30b7ef;
+  box-shadow: 0 0 42px #4fc3f7cc, 0 0 10px #fff2;
+  color: #fff !important;
+  transform: scale(1.045);
+}
+.yt-creative-container {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 340px; max-width: 402px;
+}
+.yt-glass-card {
+  background: rgba(34,36,54, 0.80);
+  border-radius: 2.5rem;
+  padding: 32px 40px 28px 40px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 8px 44px #ff174449, 0 2px 14px #4fc3f7bb;
+  border: 2px solid #ff17448c;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 320ms cubic-bezier(.19,1,.22,1), border-color 220ms;
+}
+.yt-glass-card .yt-animate-dot {
+  content: "";
+  position: absolute;
+  left: 22px; top: 22px; width: 14px; height: 14px;
+  background: radial-gradient(circle,#ff1744 75%,#ff174400 100%);
+  filter: blur(1.7px) brightness(1.5);
+  border-radius: 99em; animation: popGlow 1.6s infinite alternate;
+}
+@keyframes popGlow {
+  0% { opacity: 0.65; filter: blur(0.7px);}
+  100% { opacity: 1; filter: blur(3.5px); }
+}
+.yt-main-icon {
+  width: 56px; height: 56px; margin-bottom: 12px; filter: drop-shadow(0 0 14px #ff174444);
+}
+.yt-feature-title {
+  font-size: 1.34em;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 120%;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px #58080860;
+}
+.yt-feature-title .subscribe-burst {
+  background: linear-gradient(88deg,#ff1744 30%,#ff6b7c 70%);
+  border-radius: 0.6em;
+  color: #fff;
+  padding: 3px 12px 3px 12px;
+  font-size: 0.76em;
+  font-weight: 790;
+  margin-left: 5px;
+  animation: bounceSub 1.19s infinite alternate ease;
+  box-shadow: 0 0 8px #ff1744ba;
+}
+@keyframes bounceSub{
+  0%{ transform: translateY(1px);}
+  73%{ transform: translateY(-9px) scale(1.11);}
+  100%{ transform:translateY(2px);}
+}
+.yt-feature-desc {
+  color: #ffdfef;
+  background: linear-gradient(140deg,#222234e0 57%,#4fc3f73f 100%);
+  border-radius: 12px;
+  padding: 15px 17px 10px 17px;
+  margin-top: 8px;
+  line-height: 1.7;
+  font-size: 1.06em;
+  box-shadow: 0 2px 7px #4fc3f713;
+}
+@media (max-width: 900px) {
+  .home-section-react { flex-direction: column; gap: 38px; padding: 52px 4vw; }
+  .yt-creative-container { max-width: 99vw; }
+}
