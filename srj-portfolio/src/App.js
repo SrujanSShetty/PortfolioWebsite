@@ -3,6 +3,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import "./App.css";
 
+import React, { useState } from "react";
+
 /* NAVBAR */
 function Navbar() {
   return (
@@ -323,10 +325,7 @@ export default function App() {
   );
 }
 
-import React, { useState } from "react";
-import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
-import "./App.css";
+
 
 // ... Navbar and Hero as before ...
 
