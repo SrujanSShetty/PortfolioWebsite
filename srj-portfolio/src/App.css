@@ -524,3 +524,35 @@ footer { background: #181d24; color: #aaa; text-align: center; padding: 22px 0; 
   .timeline-h-connector { height: 36px; width: 7px; top:5px;}
   .timeline-h-connector span { height: 36px; width: 7px; background: linear-gradient(180deg,#4FC3F799 50%,transparent 100%);}
 }
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px auto;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #182c47;
+  transition: box-shadow 0.22s cubic-bezier(.4,1.5,.27,1.1), transform 0.19s cubic-bezier(.4,2,.9,.8);
+  box-shadow: 0 1px 8px #1a345188;
+  position: relative;
+}
+.service-icon img {
+  width: 38px;
+  height: 38px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0 #43e2ff00); /* No colored shadow by default */
+  transition: filter 0.18s cubic-bezier(.6,1.4,.27,1.1), transform 0.17s;
+}
+.service-card:hover .service-icon,
+.service-icon:hover {
+  box-shadow: 0 0 18px 4px #53d6ffcc, 0 2px 12px #147ab2cc;
+  /* "Glow" for the circle only on hover */
+  transform: scale(1.10);
+}
+.service-card:hover .service-icon img,
+.service-icon:hover img {
+  filter: drop-shadow(0 0 16px #7bfcffe2) brightness(1.12);
+}

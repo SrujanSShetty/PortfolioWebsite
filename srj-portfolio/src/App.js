@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import "./App.css";
-
-import React, { useState } from "react";
+import { Icon } from '@iconify/react';
+import profileImg from './assets/profile.jpg'; 
+// If About.js is in src/, otherwise adjust path accordingly
 
 /* NAVBAR */
 function Navbar() {
@@ -89,12 +90,96 @@ function Hero() {
   );
 }
 
+/* HORIZONTAL EXPERIENCE TIMELINE */
+function ExperienceTimeline() {
+  const jobs = [
+    {
+      company: "ITM Smart Lab, Illinois Institute of Technology",
+      title: "Big Data Engineer",
+      dates: "Jan 2025 - Present",
+      points: [
+        "Developed 7 ETL pipelines using PySpark/Scala and MariaDB(SQL) to translate raw data into optimized insights, increasing processing speed by 40%.",
+        "Optimized lab infrastructure by deploying 15 GPU-enhanced servers and configuring KVM switches for improved system performance.",
+        "Compressed and optimized 1M+ sales and employee records using Iz4/Snappy/Brotli, cutting storage needs by 25%.",
+        "Applied secure Git/OAuth2 development practices to align with compliance protocols.",
+      ],
+    },
+    {
+      company: "NetConnect Global",
+      title: "Business Intelligence Analyst",
+      dates: "May 2022 - Jul 2023",
+      points: [
+        "Partnered with cross-functional teams to design 10+ HR dashboards, turning complex data into actionable client insights.",
+        "Transformed HR data (lifecycle, compensation, recruitment) using SQL into dashboards in Power BI for workforce planning and talent strategy with RBAC implementation.",
+        "Built ad-hoc and recurring HR dashboards to track employee progression, pipeline health, and campaign ROI.",
+        "Generated workforce reports using CEIPAL ATS, a platform similar to Workday.",
+        "Streamlined analysis of 15K+ records using SQL and Python, enhancing report clarity and speed.",
+        "Maintained 95%+ KPI accuracy via SQL/Power Query validation pipelines for strategic reporting.",
+        "Improved Power BI performance with optimized DAX and query folding techniques.",
+      ],
+    },
+    {
+      company: "Aspire Tele-Solutions",
+      title: "Data Analyst",
+      dates: "Sep 2021 - Apr 2022",
+      points: [
+        "Built Tableau dashboards for clients like OLA, streamlining reporting workflows and improving insight delivery.",
+        "Automated HRIS reports using pivot tables, formulas, and VBA, enhancing data tracking and usability.",
+        "Conducted data integrity checks across multiple datasets using SQL and Power Query, improving reporting accuracy.",
+        "Translated complex requirements into effective visual analytics, supporting better business decisions.",
+      ],
+    },
+  ];
+
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  return (
+    <section className="experience-horizontal-section" id="experience">
+      <h2>Work <span className="highlight">Experience</span></h2>
+      <div className="horizontal-timeline-track">
+        {jobs.map((job, i) => (
+          <React.Fragment key={i}>
+            <motion.div
+              className={`horizontal-timeline-card${activeIdx === i ? " active" : ""}`}
+              onClick={() => setActiveIdx(i)}
+              whileHover={{ scale: 1.04 }}
+              animate={{ boxShadow: activeIdx === i ? "0 0 24px #4fc3f788" : "" }}
+            >
+              <div className={`timeline-h-dot${activeIdx === i ? " dot-active" : ""}`}/>
+              <div className="timeline-h-content">
+                <div className="timeline-title">{job.title}</div>
+                <div className="timeline-company">{job.company}</div>
+                <div className="timeline-dates">{job.dates}</div>
+                <ul>
+                  {job.points.map((pt, j) => <li key={j}>{pt}</li>)}
+                </ul>
+              </div>
+            </motion.div>
+            {i !== jobs.length - 1 && (
+              <div className="timeline-h-connector">
+                <motion.span
+                  animate={{
+                    background: activeIdx > i
+                      ? "linear-gradient(90deg,#4fc3f7 100%,#212434 0%)"
+                      : "linear-gradient(90deg,#4fc3f7aa 40%,rgba(60,70,90,0.6) 120%)"
+                  }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ABOUT */
 function About() {
   return (
     <section className="about-section" id="about">
       <div className="about-img neon-glow">
-        <img src="srj-portfolio\assets\profile.jpg" alt="Profile"/>
+        <img src={profileImg} alt="Profile"/>
       </div>
       <div className="about-content">
         <h2>About <span className="highlight">Me</span></h2>
@@ -109,80 +194,8 @@ function About() {
   );
 }
 
-/* HORIZONTAL EXPERIENCE TIMELINE */
-function ExperienceTimeline() {
-  const jobs = [
-    {
-      company: "ITM Smart Lab, Illinois Institute of Technology",
-      title: "Big Data Engineer",
-      dates: "Jan 2025 - Present",
-      points: [
-        "Developed 7 ETL pipelines using PySpark/Scala and MariaDB(SQL) to translate raw data into optimized insights, increasing processing speed by 40%.",
-        "Optimized lab infrastructure by deploying 15 GPU-enhanced servers and configuring KVM switches for improved system performance.",
-        "Compressed and optimized 1M+ sales and employee records using Iz4/Snappy/Brotli, cutting storage needs by 25%.",
-        "Applied secure Git/OAuth2 development practices to align with compliance protocols."
-      ]
-    },
-    {
-      company: "NetConnect Global",
-      title: "Business Intelligence Analyst",
-      dates: "May 2022 - Jul 2023",
-      points: [
-        "Partnered with cross-functional teams to design 10+ HR dashboards, turning complex data into actionable client insights.",
-        "Transformed HR data (lifecycle, compensation, recruitment) using SQL into dashboards in Power BI for workforce planning and talent strategy with RBAC implementation.",
-        "Built ad-hoc and recurring HR dashboards to track employee progression, pipeline health, and campaign ROI.",
-        "Generated workforce reports using CEIPAL ATS, a platform similar to Workday.",
-        "Streamlined analysis of 15K+ records using SQL and Python, enhancing report clarity and speed.",
-        "Maintained 95%+ KPI accuracy via SQL/Power Query validation pipelines for strategic reporting.",
-        "Improved Power BI performance with optimized DAX and query folding techniques."
-      ]
-    },
-    {
-      company: "Aspire Tele-Solutions",
-      title: "Data Analyst",
-      dates: "Sep 2021 - Apr 2022",
-      points: [
-        "Built Tableau dashboards for clients like OLA, streamlining reporting workflows and improving insight delivery.",
-        "Automated HRIS reports using pivot tables, formulas, and VBA, enhancing data tracking and usability.",
-        "Conducted data integrity checks across multiple datasets using SQL and Power Query, improving reporting accuracy.",
-        "Translated complex requirements into effective visual analytics, supporting better business decisions."
-      ]
-    }
-  ];
-  return (
-    <section className="experience-horizontal-section" id="experience">
-      <h2>Work <span className="highlight">Experience</span></h2>
-      <div className="horizontal-timeline-track">
-        {jobs.map((job, i) => (
-          <React.Fragment key={i}>
-            <motion.div
-              className="horizontal-timeline-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: i * 0.18 }}
-            >
-              <div className="timeline-h-dot" />
-              <div className="timeline-h-content">
-                <div className="timeline-title">{job.title}</div>
-                <div className="timeline-company">{job.company}</div>
-                <div className="timeline-dates">{job.dates}</div>
-                <ul>
-                  {job.points.map((pt, j) => <li key={j}>{pt}</li>)}
-                </ul>
-              </div>
-            </motion.div>
-            {i !== jobs.length - 1 && <div className="timeline-h-connector"><span/></div>}
-          </React.Fragment>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 /* PORTFOLIO (Projects) */
 function Portfolio() {
-  // Fill URLs as needed
   const projects = [
     {
       img: "/assets/your-project1.jpg",
@@ -194,7 +207,7 @@ function Portfolio() {
       img: "/assets/your-project2.jpg",
       title: "People Analytics Chicago",
       desc: "Created a Looker Studio dashboard using LinkedIn data. Full web ETL process and no-code deployment.",
-      url: "https://github.com/YourUser/PeopleAnalyticsChicago"
+      url: "https://sites.google.com/view/peopleanalyticschicago?usp=sharing"
     },
     {
       img: "/assets/your-project3.jpg",
@@ -245,31 +258,50 @@ function Portfolio() {
 
 /* SERVICES */
 function Services() {
-  const cards = [
-    {
-      icon: "/assets/3d-automation.png",
-      title: "Python Automation",
-      desc: "Leverage advanced Python tools to automate tasks, develop intelligent bots, and streamline workflows for greater business efficiency."
-    },
-    {
-      icon: "/assets/3d-database.png",
-      title: "SQL Data Engineering",
-      desc: "Design and implement robust, scalable SQL databases tailored to your project goals, ensuring data integrity and actionable insights."
-    },
-    {
-      icon: "/assets/3d-dashboard.png",
-      title: "Power BI & Analytics",
-      desc: "Turn complex data into impactful visual dashboards and comprehensive analyses for HR and business decisions."
-    }
-  ];
+const cards = [
+  {
+    icon: "https://img.icons8.com/color/96/000000/python.png",
+    title: "Python Automation",
+    desc: "Leverage advanced Python tools to automate tasks, develop intelligent bots, and streamline workflows for greater business efficiency."
+  },
+  {
+    icon: "https://img.icons8.com/color/96/000000/database.png",
+    title: "SQL Data Engineering",
+    desc: "Design and implement robust, scalable SQL databases tailored to your project goals, ensuring data integrity and actionable insights."
+  },
+  {
+    icon: "https://img.icons8.com/external-flatarticons-blue-flatarticons/64/external-analytics-digital-marketing-flatarticons-blue-flatarticons.png",
+    title: "Power BI & Analytics",
+    desc: "Turn complex data into impactful visual dashboards and comprehensive analyses for HR and business decisions."
+  }
+];
+
+
   return (
     <section className="services-section" id="services">
-      <h2>Our <span className="highlight">Services</span></h2>
+      <h2>Services <span className="highlight">I Offer</span></h2>
       <div className="services-container">
-        {cards.map((c,i) => (
-          <motion.div className="service-card" key={i}
-            whileHover={{ scale: 1.045, boxShadow: "0 0 44px #4FC3F7" }}>
-            <div className="icon"><img src={c.icon} alt={c.title}/></div>
+        {cards.map((c, i) => (
+          <motion.div
+            className="service-card"
+            key={i}
+            whileHover={{ scale: 1.07, boxShadow: "0 0 42px #4FC3F7,0 4px 48px #001b3688" }}
+            whileTap={{ scale: 0.98, rotate: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+<motion.div
+  className="icon service-icon"
+  whileHover={{
+    scale: 1.13
+  }}
+  whileTap={{
+    scale: 1.06
+  }}
+  transition={{ type: "spring", stiffness: 350 }}
+>
+  <img src={c.icon} alt={c.title + " icon"} />
+</motion.div>
+
             <h3>{c.title}</h3>
             <p>{c.desc}</p>
           </motion.div>
@@ -278,6 +310,7 @@ function Services() {
     </section>
   );
 }
+
 
 /* CONTACT */
 function Contact() {
@@ -315,116 +348,8 @@ export default function App() {
     <div>
       <Navbar/>
       <Hero/>
-      <About/>
+      <About/>              {/* <-- About me first! */}
       <ExperienceTimeline/>
-      <Portfolio/>
-      <Services/>
-      <Contact/>
-      <Footer/>
-    </div>
-  );
-}
-
-
-
-// ... Navbar and Hero as before ...
-
-/* HORIZONTAL EXPERIENCE - placed BEFORE About */
-
-function ExperienceTimeline() {
-  const jobs = [
-    {
-      company: "ITM Smart Lab, Illinois Institute of Technology",
-      title: "Big Data Engineer",
-      dates: "Jan 2025 - Present",
-      points: [
-        "Developed 7 ETL pipelines using PySpark/Scala and MariaDB(SQL) to translate raw data into optimized insights, increasing processing speed by 40%.",
-        "Optimized lab infrastructure by deploying 15 GPU-enhanced servers and configuring KVM switches.",
-        "Compressed and optimized 1M+ sales and employee records using Iz4/Snappy/Brotli, cutting storage needs by 25%.",
-        "Applied secure Git/OAuth2 development practices to align with compliance protocols."
-      ]
-    },
-    {
-      company: "NetConnect Global",
-      title: "Business Intelligence Analyst",
-      dates: "May 2022 - Jul 2023",
-      points: [
-        "Partnered with cross-functional teams to design 10+ HR dashboards, turning complex data into actionable client insights.",
-        "Transformed HR data (lifecycle, compensation, recruitment) using SQL into dashboards in Power BI for workforce planning and talent strategy with RBAC implementation.",
-        "Built ad-hoc and recurring HR dashboards to track employee progression, pipeline health, and campaign ROI.",
-        "Generated workforce reports using CEIPAL ATS, a platform similar to Workday.",
-        "Streamlined analysis of 15K+ records using SQL and Python, enhancing report clarity and speed.",
-        "Maintained 95%+ KPI accuracy via SQL/Power Query validation pipelines for strategic reporting.",
-        "Improved Power BI performance with optimized DAX and query folding techniques."
-      ]
-    },
-    {
-      company: "Aspire Tele-Solutions",
-      title: "Data Analyst",
-      dates: "Sep 2021 - Apr 2022",
-      points: [
-        "Built Tableau dashboards for clients like OLA, streamlining reporting workflows and improving insight delivery.",
-        "Automated HRIS reports using pivot tables, formulas, and VBA.",
-        "Conducted data integrity checks across multiple datasets using SQL and Power Query.",
-        "Translated complex requirements into effective visual analytics, supporting better business decisions."
-      ]
-    }
-  ];
-
-  // For highlight/progress animation:
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  return (
-    <section className="experience-horizontal-section" id="experience">
-      <h2>Work <span className="highlight">Experience</span></h2>
-      <div className="horizontal-timeline-track">
-        {jobs.map((job, i) => (
-          <React.Fragment key={i}>
-            <motion.div
-              className={`horizontal-timeline-card${activeIdx === i ? " active" : ""}`}
-              onClick={() => setActiveIdx(i)}
-              whileHover={{ scale: 1.04 }}
-              animate={{ boxShadow: activeIdx === i ? "0 0 24px #4fc3f788" : "" }}
-            >
-              <div className={`timeline-h-dot${activeIdx === i ? " dot-active" : ""}`}/>
-              <div className="timeline-h-content">
-                <div className="timeline-title">{job.title}</div>
-                <div className="timeline-company">{job.company}</div>
-                <div className="timeline-dates">{job.dates}</div>
-                <ul>
-                  {job.points.map((pt, j) => <li key={j}>{pt}</li>)}
-                </ul>
-              </div>
-            </motion.div>
-            {i !== jobs.length - 1 && (
-              <div className="timeline-h-connector">
-                <motion.span
-                  animate={{
-                    background: activeIdx > i
-                      ? "linear-gradient(90deg,#4fc3f7 100%,#212434 0%)"
-                      : "linear-gradient(90deg,#4fc3f7aa 40%,rgba(60,70,90,0.6) 120%)"
-                  }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* About, Portfolio, Services, Contact, Footer as before... */
-
-/* MAIN EXPORT, Experience now BEFORE About! */
-export default function App() {
-  return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <ExperienceTimeline/>   {/* <-- Experience comes BEFORE About! */}
-      <About/>
       <Portfolio/>
       <Services/>
       <Contact/>
