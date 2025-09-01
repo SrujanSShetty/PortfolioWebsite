@@ -197,42 +197,43 @@ function About() {
 /* PORTFOLIO (Projects) */
 function Portfolio() {
   const projects = [
+
     {
-      img: "/assets/your-project1.jpg",
-      title: "CareerConnect Platform",
-      desc: "Automated career services data with Python ETL and SQL. Power BI dashboards for placement rates and communications automation.",
-      url: "https://github.com/YourUser/CareerConnect-Platform"
-    },
-    {
-      img: "/assets/your-project2.jpg",
+      img: "srj-portfolio/src/assets/People Analytics Chicago.png",
       title: "People Analytics Chicago",
       desc: "Created a Looker Studio dashboard using LinkedIn data. Full web ETL process and no-code deployment.",
       url: "https://sites.google.com/view/peopleanalyticschicago?usp=sharing"
     },
     {
-      img: "/assets/your-project3.jpg",
+      img: "srj-portfolio/src/assets/Workforce Attendance Analytics.png",
       title: "Workforce Attendance Analytics",
       desc: "Built Power BI dashboards to monitor attendance, hybrid work, and leave trends for HR planning.",
       url: "https://github.com/YourUser/WorkforceAttendance"
     },
     {
-      img: "/assets/your-project4.jpg",
-      title: "Project Four",
-      desc: "Description for project four.",
-      url: "#"
+      img: "srj-portfolio/src/assets/People Attrition Risk Model.png",
+      title: "People Attrition Risk Model",
+      desc: "Predicted employee turnover using Random Forest with 84% accuracy.Identified key drivers like income, overtime, and tenure",
+      url: "https://github.com/SrujanSShetty/Employee-Attrition-Prediction-Using-RandomForest"
     },
     {
-      img: "/assets/your-project5.jpg",
-      title: "Project Five",
-      desc: "Description for project five.",
-      url: "#"
+      img: "srj-portfolio/src/assets/Customer Segmentation and Behavior Analysis.png",
+      title: "Customer Segmentation and Behavior Analysis",
+      desc: "Segmented customers using RFM and K-Means clustering.Uncovered purchase patterns via association rule mining.",
+      url: "https://github.com/SrujanSShetty/Customer-segmentation-of-Online-gift-store"
     },
     {
-      img: "/assets/your-project6.jpg",
-      title: "Project Six",
-      desc: "Description for project six.",
-      url: "#"
-    }
+      img: "srj-portfolio/src/assets/Spotify Stream Trends Uncovered.jpg",
+      title: "Spotify Stream Trends Uncovered",
+      desc: "Built Power BI dashboard to reveal artist popularity and stream patterns.Used API and DENEB for visuals and time-based insights.",
+      url: "https://github.com/SrujanSShetty/Enhancing-Music-Streaming-Insights-with-Spotify-Dashboard."
+    },
+    {
+      img: "srj-portfolio/src/assets/CareerConnect Platform.gif",
+      title: "CareerConnect Platform",
+      desc: "Automated career services data with Python ETL and SQL. Power BI dashboards for placement rates and communications automation.",
+      url: "https://www.iit.edu/career-services/about"
+    },
   ];
   return (
     <section className="portfolio-section" id="projects">
@@ -271,8 +272,8 @@ const cards = [
   },
   {
     icon: "https://img.icons8.com/external-flatarticons-blue-flatarticons/64/external-analytics-digital-marketing-flatarticons-blue-flatarticons.png",
-    title: "Power BI & Analytics",
-    desc: "Turn complex data into impactful visual dashboards and comprehensive analyses for HR and business decisions."
+    title: "DataVisualization & Analytics",
+    desc: "Turn complex data into impactful visual dashboards using PowerBI, Tableau, Looker and comprehensive analyses for HR and business decisions."
   }
 ];
 
