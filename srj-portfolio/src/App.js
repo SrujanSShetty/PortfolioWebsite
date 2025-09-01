@@ -6,6 +6,14 @@ import { Icon } from '@iconify/react';
 import profileImg from './assets/profile.jpg'; 
 // If About.js is in src/, otherwise adjust path accordingly
 
+import peopleAnalyticsImg from './assets/People Analytics Chicago.png';
+import workforceAttendanceImg from './assets/Workforce Attendance Analytics.png';
+import attritionImg from './assets/People Attrition Risk Model.png';
+import customerSegmentationImg from './assets/Customer Segmentation and Behavior Analysis.png';
+import spotifyImg from './assets/Spotify Stream Trends Uncovered.jpg';
+import careerConnectImg from './assets/CareerConnect Platform.gif';
+
+
 /* NAVBAR */
 function Navbar() {
   return (
@@ -196,45 +204,45 @@ function About() {
 
 /* PORTFOLIO (Projects) */
 function Portfolio() {
-  const projects = [
+const projects = [
+  {
+    img: peopleAnalyticsImg,
+    title: "People Analytics Chicago",
+    desc: "Created a Looker Studio dashboard using LinkedIn data. Full web ETL process and no-code deployment.",
+    url: "https://sites.google.com/view/peopleanalyticschicago?usp=sharing"
+  },
+  {
+    img: workforceAttendanceImg,
+    title: "Workforce Attendance Analytics",
+    desc: "Built Power BI dashboards to monitor attendance, hybrid work, and leave trends for HR planning.",
+    url: "https://github.com/SrujanSShetty/Workforce-Attendance-Analytics"
+  },
+  {
+    img: attritionImg,
+    title: "People Attrition Risk Model",
+    desc: "Predicted employee turnover using Random Forest with 84% accuracy.Identified key drivers like income, overtime, and tenure",
+    url: "https://github.com/SrujanSShetty/Employee-Attrition-Prediction-Using-RandomForest"
+  },
+  {
+    img: customerSegmentationImg,
+    title: "Customer Segmentation and Behavior Analysis",
+    desc: "Segmented customers using RFM and K-Means clustering.Uncovered purchase patterns via association rule mining.",
+    url: "https://github.com/SrujanSShetty/Customer-segmentation-of-Online-gift-store"
+  },
+  {
+    img: spotifyImg,
+    title: "Spotify Stream Trends Uncovered",
+    desc: "Built Power BI dashboard to reveal artist popularity and stream patterns.Used API and DENEB for visuals and time-based insights.",
+    url: "https://github.com/SrujanSShetty/Enhancing-Music-Streaming-Insights-with-Spotify-Dashboard."
+  },
+  {
+    img: careerConnectImg,
+    title: "CareerConnect Platform",
+    desc: "Automated career services data with Python ETL and SQL. Power BI dashboards for placement rates and communications automation.",
+    url: "https://www.iit.edu/career-services/about"
+  },
+];
 
-    {
-      img: "srj-portfolio/src/assets/People Analytics Chicago.png",
-      title: "People Analytics Chicago",
-      desc: "Created a Looker Studio dashboard using LinkedIn data. Full web ETL process and no-code deployment.",
-      url: "https://sites.google.com/view/peopleanalyticschicago?usp=sharing"
-    },
-    {
-      img: "srj-portfolio/src/assets/Workforce Attendance Analytics.png",
-      title: "Workforce Attendance Analytics",
-      desc: "Built Power BI dashboards to monitor attendance, hybrid work, and leave trends for HR planning.",
-      url: "https://github.com/YourUser/WorkforceAttendance"
-    },
-    {
-      img: "srj-portfolio/src/assets/People Attrition Risk Model.png",
-      title: "People Attrition Risk Model",
-      desc: "Predicted employee turnover using Random Forest with 84% accuracy.Identified key drivers like income, overtime, and tenure",
-      url: "https://github.com/SrujanSShetty/Employee-Attrition-Prediction-Using-RandomForest"
-    },
-    {
-      img: "srj-portfolio/src/assets/Customer Segmentation and Behavior Analysis.png",
-      title: "Customer Segmentation and Behavior Analysis",
-      desc: "Segmented customers using RFM and K-Means clustering.Uncovered purchase patterns via association rule mining.",
-      url: "https://github.com/SrujanSShetty/Customer-segmentation-of-Online-gift-store"
-    },
-    {
-      img: "srj-portfolio/src/assets/Spotify Stream Trends Uncovered.jpg",
-      title: "Spotify Stream Trends Uncovered",
-      desc: "Built Power BI dashboard to reveal artist popularity and stream patterns.Used API and DENEB for visuals and time-based insights.",
-      url: "https://github.com/SrujanSShetty/Enhancing-Music-Streaming-Insights-with-Spotify-Dashboard."
-    },
-    {
-      img: "srj-portfolio/src/assets/CareerConnect Platform.gif",
-      title: "CareerConnect Platform",
-      desc: "Automated career services data with Python ETL and SQL. Power BI dashboards for placement rates and communications automation.",
-      url: "https://www.iit.edu/career-services/about"
-    },
-  ];
   return (
     <section className="portfolio-section" id="projects">
       <h2>Latest <span className="highlight">Projects</span></h2>
