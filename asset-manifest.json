@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PortfolioWebsite/static/css/main.7afe6904.css",
+    "main.js": "/PortfolioWebsite/static/js/main.9706acd8.js",
+    "static/js/453.a5b25d5b.chunk.js": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js",
+    "static/media/Spotify Stream Trends Uncovered.jpg": "/PortfolioWebsite/static/media/Spotify Stream Trends Uncovered.89ccbe7a5cea7e6dbb2f.jpg",
+    "static/media/Customer Segmentation and Behavior Analysis.png": "/PortfolioWebsite/static/media/Customer Segmentation and Behavior Analysis.9aa6b37e8528e8d00d2a.png",
+    "static/media/Workforce Attendance Analytics.png": "/PortfolioWebsite/static/media/Workforce Attendance Analytics.29f3ef8a77336800f12d.png",
+    "static/media/People Analytics Chicago.png": "/PortfolioWebsite/static/media/People Analytics Chicago.f1e33b45da569d1f633b.png",
+    "static/media/People Attrition Risk Model.png": "/PortfolioWebsite/static/media/People Attrition Risk Model.7f867c24779b7513e459.png",
+    "static/media/profile.jpg": "/PortfolioWebsite/static/media/profile.cd22fc349cee7473252f.jpg",
+    "static/media/CareerConnect Platform.gif": "/PortfolioWebsite/static/media/CareerConnect Platform.9bb8fd86e56135a8b03c.gif",
+    "index.html": "/PortfolioWebsite/index.html",
+    "main.7afe6904.css.map": "/PortfolioWebsite/static/css/main.7afe6904.css.map",
+    "main.9706acd8.js.map": "/PortfolioWebsite/static/js/main.9706acd8.js.map",
+    "453.a5b25d5b.chunk.js.map": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7afe6904.css",
+    "static/js/main.9706acd8.js"
+  ]
+}
