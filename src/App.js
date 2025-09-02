@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import "./App.css";
@@ -13,6 +13,8 @@ import customerSegmentationImg from './assets/Customer Segmentation and Behavior
 import spotifyImg from './assets/Spotify Stream Trends Uncovered.jpg';
 import careerConnectImg from './assets/CareerConnect Platform.gif';
 
+
+import emailjs from 'emailjs-com';
 
 /* NAVBAR */
 function Navbar() {
@@ -322,11 +324,32 @@ const cards = [
 
 
 /* CONTACT */
+
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_te4j25y',     // Get from EmailJS dashboard
+      'template_gcwips7',    // Get from EmailJS dashboard
+      form.current,
+      'XRBIWsWEw36UEvvMd'         // Get from EmailJS dashboard (sometimes called Public Key)
+    ).then(
+      (result) => {
+        alert('Message sent successfully!');
+        form.current.reset();
+      },
+      (error) => {
+        alert('Failed to send the message, please try again.');
+      }
+    );
+  };
+
   return (
     <section className="contact-section" id="contact">
       <h2>Contact <span className="highlight">Me!</span></h2>
-      <form className="contact-form" autoComplete="off">
+      <form ref={form} onSubmit={sendEmail} className="contact-form" autoComplete="off">
         <div className="form-row">
           <input type="text" name="name" placeholder="Full name" required/>
           <input type="email" name="email" placeholder="Email address" required/>
