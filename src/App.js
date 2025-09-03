@@ -79,7 +79,7 @@ function Hero() {
           <a href="mailto:srujansshettyofficial@gmail.com"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail"/></a>
         </div>
         <div className="button-row">
-          <a className="btn btn-glow" href="Srujan_HRDataAnalyst_Resume.pdf" download>Download CV</a>
+          <a className="btn btn-glow" href="Srujan_PeopleDataAnalyst_Resume.pdf" download>Download CV</a>
         </div>
       </div>
       <motion.div
