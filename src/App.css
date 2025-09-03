@@ -614,4 +614,40 @@ footer { background: #181d24; color: #aaa; text-align: center; padding: 22px 0; 
   .portfolio-item { width: 95vw; min-width: 0; max-width: 99vw; }
 }
 
+.custom-swiper-arrow {
+background: #181d24;
+color: #4FC3F7;
+border: none;
+border-radius: 50%;
+font-size: 2rem;
+width: 44px;
+height: 44px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 2px 8px #021b3335;
+z-index: 10;
+cursor: pointer;
+transition: background .23s, color .23s, box-shadow .18s;
+margin: 0 6px;
+user-select: none;
+outline: none;
+}
+.custom-swiper-arrow:active,
+.custom-swiper-arrow:hover {
+background: #4FC3F7;
+color: #181d24;
+}
 
+
+.custom-swiper-arrow svg {
+  transition: filter .22s, box-shadow .22s, background .22s;
+}
+.custom-swiper-arrow:hover svg path {
+  stroke: #1aecff;
+  filter: drop-shadow(0 0 10px #4FC3F7);
+}
+.custom-swiper-arrow:active svg path {
+  stroke: #fff;
+  filter: drop-shadow(0 0 20px #42e3ff);
+}

@@ -304,55 +304,126 @@ function Portfolio() {
     // Add more projects here...
   ];
 
-   return (
+  const swiperRef = useRef(null);
+  const [onFirstPage, setOnFirstPage] = useState(true);
+
+
+
+  // Use Swiper's onSlideChange to detect page
+  const handleSwiperInit = (swiper) => {
+    swiperRef.current = swiper;
+    setOnFirstPage(swiper.activeIndex === 0);
+    swiper.on("slideChange", () => {
+      setOnFirstPage(swiper.activeIndex === 0);
+    });
+  };
+
+  // Always jump to the other page, regardless of arrow
+  const handleArrowClick = () => {
+    if (!swiperRef.current) return;
+    if (onFirstPage) {
+      // Go to index 6, which is the start of the second "page"
+      swiperRef.current.slideTo(6);
+    } else {
+      // Go to index 0 (first slide)
+      swiperRef.current.slideTo(0);
+    }
+  };
+
+  return (
     <section className="portfolio-section" id="projects">
       <h2>Latest <span className="highlight">Projects</span></h2>
-      <div className="portfolio-swiper-wrap" style={{
-        maxWidth: 1080,
-        margin: "0 auto",
-        position: "relative",
-        overflow: "hidden"
+      <div style={{
+        maxWidth: 1200,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '0 auto'
       }}>
-        <Swiper
-          modules={[Navigation, Pagination, Grid]}
-          slidesPerView={3}
-          grid={{ rows: 2, fill: "row" }}
-          slidesPerGroup={6}
-          spaceBetween={30}
-          navigation
-          pagination={{ clickable: true }}
-          style={{ paddingBottom: 40 }}
-          breakpoints={{
-            1200: { slidesPerView: 3, grid: { rows: 2 }, slidesPerGroup: 6 },
-            900: { slidesPerView: 2, grid: { rows: 2 }, slidesPerGroup: 4 },
-            600: { slidesPerView: 1, grid: { rows: 2 }, slidesPerGroup: 2 },
-          }}
+        {/* LEFT ARROW OUTSIDE */}
+        <button
+          className="custom-swiper-arrow left"
+          aria-label="Previous"
+          onClick={handleArrowClick}
         >
-          {projects.map((p, i) => (
-            <SwiperSlide key={i}>
-              <motion.a
-                className="portfolio-item"
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  width: 320,   // fixes card to correct width
-                  maxWidth: 320,
-                  boxSizing: "border-box"
-                }}
-                whileHover={{ scale: 1.063, boxShadow: "0 0 44px #4FC3F7" }}
-              >
-                <img src={p.img} alt={p.title} />
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
-              </motion.a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+            <path d="M21 8L13 17L21 26" stroke="#4FC3F7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" filter="url(#glowL)" />
+            <defs>
+              <filter id="glowL" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#4FC3F7" />
+              </filter>
+            </defs>
+          </svg>
+        </button>
+
+
+        <div className="portfolio-swiper-wrap" style={{
+          maxWidth: 1080,
+          margin: '0 18px',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <Swiper
+            modules={[Navigation, Pagination, Grid]}
+            slidesPerView={3}
+            grid={{ rows: 2, fill: "row" }}
+            slidesPerGroup={6}
+            spaceBetween={30}
+            // manual navigation, not using built-in arrows
+            navigation={false}
+            onInit={handleSwiperInit}
+            pagination={{ clickable: true }}
+            style={{ paddingBottom: 40 }}
+            breakpoints={{
+              1200: { slidesPerView: 3, grid: { rows: 2 }, slidesPerGroup: 6 },
+              900: { slidesPerView: 2, grid: { rows: 2 }, slidesPerGroup: 4 },
+              600: { slidesPerView: 1, grid: { rows: 2 }, slidesPerGroup: 2 }
+            }}
+          >
+            {projects.map((p, i) => (
+              <SwiperSlide key={i}>
+                <motion.a
+                  className="portfolio-item"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    width: 320,
+                    maxWidth: 320,
+                    boxSizing: "border-box"
+                  }}
+                  whileHover={{ scale: 1.063, boxShadow: "0 0 44px #4FC3F7" }}
+                >
+                  <img src={p.img} alt={p.title} />
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </motion.a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* RIGHT ARROW OUTSIDE */}
+        <button
+          className="custom-swiper-arrow right"
+          aria-label="Next"
+          onClick={handleArrowClick}
+        >
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+            <path d="M13 8L21 17L13 26" stroke="#4FC3F7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" filter="url(#glowR)" />
+            <defs>
+              <filter id="glowR" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#4FC3F7" />
+              </filter>
+            </defs>
+          </svg>
+        </button>
       </div>
     </section>
   );
 }
+
+
 /* SERVICES */
 function Services() {
   const cards = [
