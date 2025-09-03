@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PortfolioWebsite/static/css/main.c8c20f75.css",
-    "main.js": "/PortfolioWebsite/static/js/main.98693165.js",
+    "main.js": "/PortfolioWebsite/static/js/main.1265401c.js",
     "static/js/453.a5b25d5b.chunk.js": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js",
     "static/media/Spotify Stream Trends Uncovered.jpg": "/PortfolioWebsite/static/media/Spotify Stream Trends Uncovered.89ccbe7a5cea7e6dbb2f.jpg",
     "static/media/Customer Segmentation and Behavior Analysis.png": "/PortfolioWebsite/static/media/Customer Segmentation and Behavior Analysis.9aa6b37e8528e8d00d2a.png",
@@ -15,11 +15,11 @@
     "static/media/GetProspect.png": "/PortfolioWebsite/static/media/GetProspect.942a21756a378adbeb75.png",
     "index.html": "/PortfolioWebsite/index.html",
     "main.c8c20f75.css.map": "/PortfolioWebsite/static/css/main.c8c20f75.css.map",
-    "main.98693165.js.map": "/PortfolioWebsite/static/js/main.98693165.js.map",
+    "main.1265401c.js.map": "/PortfolioWebsite/static/js/main.1265401c.js.map",
     "453.a5b25d5b.chunk.js.map": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8c20f75.css",
-    "static/js/main.98693165.js"
+    "static/js/main.1265401c.js"
   ]
 }
