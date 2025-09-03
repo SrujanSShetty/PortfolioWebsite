@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/PortfolioWebsite/static/css/main.c8c20f75.css",
-    "main.js": "/PortfolioWebsite/static/js/main.bb5d6372.js",
+    "main.js": "/PortfolioWebsite/static/js/main.0307d0ed.js",
     "static/js/453.a5b25d5b.chunk.js": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js",
     "static/media/Spotify Stream Trends Uncovered.jpg": "/PortfolioWebsite/static/media/Spotify Stream Trends Uncovered.89ccbe7a5cea7e6dbb2f.jpg",
     "static/media/Customer Segmentation and Behavior Analysis.png": "/PortfolioWebsite/static/media/Customer Segmentation and Behavior Analysis.9aa6b37e8528e8d00d2a.png",
     "static/media/Workforce Attendance Analytics.png": "/PortfolioWebsite/static/media/Workforce Attendance Analytics.29f3ef8a77336800f12d.png",
+    "static/media/Srujan_PeopleDataAnalyst_Resume.pdf": "/PortfolioWebsite/static/media/Srujan_PeopleDataAnalyst_Resume.e188b91f51b8131f8256.pdf",
     "static/media/Portfolio.png": "/PortfolioWebsite/static/media/Portfolio.f952098a545393d00369.png",
     "static/media/People Analytics Chicago.png": "/PortfolioWebsite/static/media/People Analytics Chicago.f1e33b45da569d1f633b.png",
     "static/media/DataGovernance.png": "/PortfolioWebsite/static/media/DataGovernance.62854d74592e97419410.png",
@@ -15,11 +16,11 @@
     "static/media/GetProspect.png": "/PortfolioWebsite/static/media/GetProspect.942a21756a378adbeb75.png",
     "index.html": "/PortfolioWebsite/index.html",
     "main.c8c20f75.css.map": "/PortfolioWebsite/static/css/main.c8c20f75.css.map",
-    "main.bb5d6372.js.map": "/PortfolioWebsite/static/js/main.bb5d6372.js.map",
+    "main.0307d0ed.js.map": "/PortfolioWebsite/static/js/main.0307d0ed.js.map",
     "453.a5b25d5b.chunk.js.map": "/PortfolioWebsite/static/js/453.a5b25d5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8c20f75.css",
-    "static/js/main.bb5d6372.js"
+    "static/js/main.0307d0ed.js"
   ]
 }
