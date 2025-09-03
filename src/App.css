@@ -556,3 +556,62 @@ footer { background: #181d24; color: #aaa; text-align: center; padding: 22px 0; 
 .service-icon:hover img {
   filter: drop-shadow(0 0 16px #7bfcffe2) brightness(1.12);
 }
+
+
+/* PORTFOLIO with Swiper as 3x2 grid - perfect for your card sizes */
+.portfolio-section { background: #22252f; padding: 70px 0 60px 0; }
+.portfolio-section h2 { font-size: 2em; text-align: center; margin-bottom: 34px; }
+.portfolio-swiper-wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  overflow: visible !important;
+}
+.swiper-wrapper { overflow: visible !important; }
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: stretch;
+  min-width: 0;
+}
+.portfolio-item {
+  background: #232730;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0002;
+  min-height: 260px;
+  width: 320px;      /* This locks the card width for a 3x2 grid in 1080px */
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .33s, transform .22s, border .18s, z-index .1s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%; height: 175px; object-fit: cover; display: block;
+  border-bottom: 3px solid #4FC3F744; border-radius: 16px 16px 0 0;
+}
+.portfolio-item h3 { margin: 12px 18px 6px 18px; color: #4FC3F7; font-size: 1.12em; }
+.portfolio-item p { margin: 0 18px 18px 18px; color: #b3b9ce; font-size: 1em; }
+.portfolio-item:hover {
+  box-shadow: 0 0 42px #4FC3F769, 0 4px 36px #00334455;
+  transform: translateY(-7px) scale(1.027);
+  z-index: 2; border: 2px solid #4FC3F7;
+}
+.swiper-button-next, .swiper-button-prev { color: #4FC3F7; }
+.swiper-pagination-bullet-active { background: #4FC3F7; }
+
+@media (max-width: 1100px) {
+  .portfolio-swiper-wrap { max-width: 98vw; }
+  .portfolio-item { width: 31vw; max-width: 99vw; }
+}
+@media (max-width: 800px) {
+  .portfolio-swiper-wrap { max-width: 98vw; }
+  .portfolio-item { width: 95vw; min-width: 0; max-width: 99vw; }
+}
+
+
